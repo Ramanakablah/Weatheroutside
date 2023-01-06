@@ -1,0 +1,103 @@
+.Weather{
+    min-height: 100vh;
+    background: linear-gradient(#87CEEB,#087fef);
+}
+
+.Search_Box{
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.125);
+    padding: 10px 5px;
+}
+
+.Daily_Bulletin{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+}
+
+.Search_Box input{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    border-bottom: solid 2px white;
+    color: white;
+    text-align: center;
+}
+
+.Location{
+    color: white;
+    flex-basis: 200px;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Daily_Bulletin_Container{
+    flex-basis: 200px;
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.Messages{
+    font-size: 0.9rem;
+}
+
+.C_TileL{
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.C_Tile{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.Wicon{
+    height: 200px;
+    width: 200px;
+}
+
+.Forcast_Holder{
+    width: 75vw;
+    padding: 20px;
+    margin: auto;
+    /* border: solid 2px white;
+    border-radius: 20px; */
+}
+
+.Forcast{
+    display: grid;
+    grid-template-columns: repeat(10,minmax(240px, 1fr));
+    gap: 1.4rem;
+    overflow-x: scroll;
+}
+
+.Sun{
+    animation-name: Sunr;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Sunr{
+ from{
+   transform: rotateZ(0deg);
+   filter: drop-shadow(0px 0px 0px white);
+ }
+ to{
+    transform: rotateZ(360deg);
+    filter: drop-shadow(0px 0px 25px white);
+ }
+}
