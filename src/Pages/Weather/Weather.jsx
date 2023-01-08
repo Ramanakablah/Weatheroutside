@@ -5,17 +5,24 @@ import Day from '../../Components/Day/Day'
 
 const Weather = () => {
   const [Wether, setWether] = useState({})
-  const [Location, setLocation] = useState("")
+  const [Location, setLocation] = useState("London")
 
+  // const getwether = async () => {
+  //   const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6cbbb287df064a81bc4190257230301&q=${Location}&days=3&aqi=no&alerts=no`)
+  //   const data = await res.json()
+  //   console.log(data, "From get wether function")
+  //   setWether(data);
+  // }
+
+useEffect(() => {
   const getwether = async () => {
     const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6cbbb287df064a81bc4190257230301&q=${Location}&days=3&aqi=no&alerts=no`)
     const data = await res.json()
     console.log(data, "From get wether function")
     setWether(data);
   }
-
-  // getwether();
-
+  getwether();
+}, [Location])
 
   return (<div className={styles.Weather}>
     <div className={styles.Search_Box}>
@@ -45,16 +52,10 @@ const Weather = () => {
     </div>
     <div className={styles.Forcast_Holder}>
       <div className={styles.Forcast}>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
-        <Day/>
+         {Wether?.forecast?.forecastday?.map((day,ind)=>{
+          return <Day key={ind} day={day}/>
+         })}
+          {/* <Day/> */}
       </div>
     </div>
   </div>
