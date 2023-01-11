@@ -1,5 +1,8 @@
 .Weather{
     min-height: 100vh;
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .Search_Box{
@@ -81,6 +84,29 @@
     grid-template-columns: repeat(10,minmax(240px, 1fr));
     gap: 1.4rem;
     overflow-x: scroll;
+}
+
+.Star{
+    font-size:0.5rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation-name: star;
+    animation-iteration-count:infinite;
+}
+
+@keyframes star{
+  from{
+    transform: rotateZ(0deg);
+    filter: drop-shadow(0px 0px 0px white);
+    color: white;
+  }
+  to{
+    transform: rotateZ(360deg);
+    filter: drop-shadow(0px 0px 10px white);
+    color: rgb(255, 255, 255);
+  }
 }
 
 .Sun{
