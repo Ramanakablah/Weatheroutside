@@ -5,7 +5,7 @@ import Day from '../../Components/Day/Day'
 
 const Weather = () => {
   const [Wether, setWether] = useState({})
-  const [Location, setLocation] = useState("London")
+  const [Location, setLocation] = useState("New Delhi")
 
   // const getwether = async () => {
   //   const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=6cbbb287df064a81bc4190257230301&q=${Location}&days=3&aqi=no&alerts=no`)
