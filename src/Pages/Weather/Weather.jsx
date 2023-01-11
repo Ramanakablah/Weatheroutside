@@ -6,7 +6,7 @@ import moon from "../../Components/moon.png";
 
 const Weather = () => {
   const [Wether, setWether] = useState({});
-  const [Location, setLocation] = useState("London");
+  const [Location, setLocation] = useState("New Delhi");
   const [isday, setisday] = useState(false);
 
   const getwether = async () => {
