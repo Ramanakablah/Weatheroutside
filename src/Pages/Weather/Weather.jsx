@@ -18,13 +18,32 @@ const Weather = () => {
     console.log(data, "From get wether function");
     setWether(data);
   };
+
+
   useEffect(() => {
     getwether();
-  },[]);
+    if(isday===0){
+      const Star = document.getElementById("Stars");
+      const wind = document.getElementById("Screen")
+      let s = setInterval(() => {
+        let sta = Star.cloneNode(true);
+        sta.style.top = Math.random() * wind.clientHeight + "px";
+        sta.style.left = Math.random() * wind.clientWidth + "px";
+        sta.style.animationDuration = 1 + Math.random() * 6 + "s"
+        wind.append(sta)
+      }, 100);
+      
+      setTimeout(() => {
+        clearInterval(s);
+      }, 4000);
+    }
+      
+  }, []);
 
   return (
     <div
       className={styles.Weather}
+      id="Screen"
       style={{
         background:
           isday === 1
@@ -32,6 +51,11 @@ const Weather = () => {
             : "linear-gradient(#030933,#03117a,#03437e)",
       }}
     >
+
+      {isday===0?<div className={styles.Star} id="Stars">
+        <i class="fa-sharp fa-solid fa-star"></i>
+      </div>:null}
+
       <div className={styles.Search_Box}>
         <input
           type="text"
